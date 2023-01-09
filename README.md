@@ -69,4 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # textutils
+<<<<<<< HEAD
 # TextUtils
+=======
+>>>>>>> 92873d58ff09528d73e9f8978a1c4f79bd02b24c
