@@ -13,6 +13,7 @@ const handleUpClick = ()=>
 {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Changed To UpperCase", "success")
 }
 
     //Convert To lowerCase
@@ -20,12 +21,14 @@ const handleDownClick = () =>
 {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Changed To LowerCase", "success")
 }
     //Remove Extra Spaces
 const handleRemoveExtra = () =>
 {
     let newText = text.split(/[ ]+/);//used regex
     setText(newText.join(" "))
+    props.showAlert("Extra Space Removed", "success")
 }
     // Copy to clipboard
 const handleCopyClick = () =>
@@ -34,11 +37,14 @@ const handleCopyClick = () =>
     val.select();
     // document.execCommand("copy"); this is depreciated
     navigator.clipboard.writeText(val.value);
+    props.showAlert("Copied to Clipboard", "success")
+
 }
     //Clear Text
 const handleClearClick = () =>
 {
     setText("")
+    props.showAlert("Text cleared", "success")
 }
 return (
 <>
@@ -55,7 +61,7 @@ return (
 </div>
 <div className={`container my-2 text-${props.mode==='dark'?'light':'dark'}`}>
     <h2>Your Text Summary</h2>
-    <p>{text.split(" ").length} words and {text.length} Characters</p>
+    <p>{text.length>0?text.split(" ").length:0} words and {text.length} Characters</p>
     <p>{0.008 * text.split(" ").length} Minutes Read</p>
     <h2>Preview</h2>
     <p>{text.length>0?text:"Enter something To Preview"}</p>
