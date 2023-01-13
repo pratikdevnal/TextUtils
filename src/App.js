@@ -3,7 +3,14 @@ import './App.css';
 import TextForm from './components/TextForm';
 import { useState } from 'react';
 import Alert from './components/Alert';
-// import About from './components/About';
+import React from "react";
+import {
+  Route,
+  Routes,
+  BrowserRouter,
+} from "react-router-dom";
+
+import About from './components/About';
 function App() {
   const [alert, setAlert] =  useState(null);
   const showAlert = (message , type) => {
@@ -40,17 +47,19 @@ function App() {
     }
   }
   return (
-    <>
+ 
+<BrowserRouter>
 
+<div className="container my-3">
 <Navbar title="TextUtils"  mode={mode} toggleMode={toggleMode}/>
 <Alert alert={alert}/>
-<div className="container my-3">
-{/* <About/> */}
-<TextForm heading="Enter the Text To Analyze" mode={mode} showAlert= {showAlert}/>
 
+<Routes>
+  <Route path="/" element={<TextForm heading="Enter the Text To Analyze" mode={mode} showAlert= {showAlert}/>}/>
+  <Route path="/about" element={<About/>}/>
+</Routes>
 </div>
-
-    </>
+</BrowserRouter>
   );
 }
 

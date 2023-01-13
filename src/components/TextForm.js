@@ -53,12 +53,15 @@ return (
     <div className="mb-3">
     <textarea className={`form-control text-${props.mode==='dark'?'light':'dark'}`} id="myBox" rows="8" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode === 'light'?'white':'#042743'}}></textarea>
     </div>
-    <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to UpperCase</button>
-    <button className="btn btn-primary mx-2" onClick={handleDownClick}>Convert to LowerCase</button>
-    <button className="btn btn-primary mx-2" onClick={handleRemoveExtra}>Remove Extra Space</button>
-    <button className="btn btn-primary mx-2" onClick={handleCopyClick}>Copy to ClipBoard</button>
-    <button className="btn btn-primary mx-2" onClick={handleClearClick}>Clear Text</button>
-</div>
+    
+    <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to UpperCase</button>
+    <button className="btn btn-primary mx-2 my-1" onClick={handleDownClick}>Convert to LowerCase</button>
+    <button className="btn btn-primary mx-2 my-1" onClick={handleRemoveExtra}>Remove Extra Space</button>
+    <button className="btn btn-primary mx-2 my-1" onClick={handleCopyClick}>Copy to ClipBoard</button>
+    <button className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>Clear Text</button>
+    
+
+    </div>
 <div className={`container my-2 text-${props.mode==='dark'?'light':'dark'}`}>
     <h2>Your Text Summary</h2>
     <p>{text.length>0?text.split(" ").length:0} words and {text.length} Characters</p>
