@@ -8,16 +8,10 @@ export default function About() {
 const [btntext , setbtntext] = useState("light")
 const toggleStyle = () =>
 {
-  if(btntext==='light')
-  {
-    setbtntext('Dark')
-  }
-  else
-  {
-    setbtntext('light')
-  }
+ 
   if(myStyle.color === 'white')
   {
+    setbtntext('Dark')
     SetMyStyle(
       {
         color: 'black',
@@ -27,10 +21,12 @@ const toggleStyle = () =>
   }
   else
   {
+    setbtntext('light')
     SetMyStyle(
       {
         color: 'white',
-        backgroundColor: 'black'
+        backgroundColor: 'black',
+        border: '1px solid white'
       }
     )
   }
