@@ -52,11 +52,11 @@ function App() {
 
 <div className="container my-3">
 <Navbar title="TextUtils"  mode={mode} toggleMode={toggleMode}/>
-<Alert alert={alert}/>
+<Alert alert={alert} />
 
 <Routes>
   <Route path="/" element={<TextForm heading="Enter the Text To Analyze" mode={mode} showAlert= {showAlert}/>}/>
-  <Route path="/about" element={<About/>}/>
+  <Route path="/about" element={<About mode={mode}/>}/>
 </Routes>
 </div>
 </BrowserRouter>
