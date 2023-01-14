@@ -54,11 +54,11 @@ return (
     <textarea className={`form-control text-${props.mode==='dark'?'light':'dark'}`} id="myBox" rows="8" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode === 'light'?'white':'#042743'}}></textarea>
     </div>
     
-    <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to UpperCase</button>
-    <button className="btn btn-primary mx-2 my-1" onClick={handleDownClick}>Convert to LowerCase</button>
-    <button className="btn btn-primary mx-2 my-1" onClick={handleRemoveExtra}>Remove Extra Space</button>
-    <button className="btn btn-primary mx-2 my-1" onClick={handleCopyClick}>Copy to ClipBoard</button>
-    <button className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>Clear Text</button>
+    <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to UpperCase</button>
+    <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleDownClick}>Convert to LowerCase</button>
+    <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleRemoveExtra}>Remove Extra Space</button>
+    <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopyClick}>Copy to ClipBoard</button>
+    <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>Clear Text</button>
     
 
     </div>
@@ -67,7 +67,7 @@ return (
     <p>{text.length>0?text.split(" ").length:0} words and {text.length} Characters</p>
     <p>{0.008 * text.split(" ").length} Minutes Read</p>
     <h2>Preview</h2>
-    <p>{text.length>0?text:"Enter something To Preview"}</p>
+    <p>{text.length>0?text:"Nothing to Preview"}</p>
 </div>    
 </>
 
